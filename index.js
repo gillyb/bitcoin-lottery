@@ -4,11 +4,13 @@ const request = require('request');
 
 let i = 0;
 
-const abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const abc = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  .split('');
 const abcLength = abc.length;
 const createRandomString = function() {
   let a = '';
-  for (let i=0; i<256; i++) {
+  let randomLimit = Math.floor(Math.random() * 256);
+  for (let i = 0; i < randomLimit; i++) {
     a += abc[Math.floor(Math.random() * abcLength)];
   }
   return a;
